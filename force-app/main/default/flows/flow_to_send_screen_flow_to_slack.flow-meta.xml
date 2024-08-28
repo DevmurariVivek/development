@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>slack_screen</name>
+        <label>slack screen</label>
+        <locationX>176</locationX>
+        <locationY>158</locationY>
+        <actionName>ManagedCodeDev__Send_Flow_to_Slack</actionName>
+        <actionType>slackSendMessageToLaunchFlow</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>ActionInput__buttonLabel</name>
+            <value>
+                <stringValue>Finish</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>ActionInput__slackAppIdForToken</name>
+            <value>
+                <stringValue>0A35j000000QXBx</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>ActionInput__slackConversationId</name>
+            <value>
+                <stringValue>a0N5j000003LBr3EAG</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>ActionInput__slackMessage</name>
+            <value>
+                <stringValue>Enter the vallues</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>ActionInput__slackWorkspaceIdForToken</name>
+            <value>
+                <stringValue>getoncrmsolutions.slack.com</stringValue>
+            </value>
+        </inputParameters>
+        <nameSegment>ManagedCodeDev__Send_Flow_to_Slack</nameSegment>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+        <versionSegment>1</versionSegment>
+    </actionCalls>
+    <apiVersion>55.0</apiVersion>
+    <environments>Default</environments>
+    <interviewLabel>flow to send screen flow to slack {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>flow to send screen flow to slack</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>slack_screen</targetReference>
+        </connector>
+    </start>
+    <status>Active</status>
+</Flow>
