@@ -1,0 +1,15 @@
+<apex:page tabStyle="Account"> 
+    <apex:pageBlock >
+        <apex:pageBlockSection title="Payament response" collapsible="false">
+            <!-- <c:myVFComponent textValue="This Text is blue" textColor="blue" />
+            <c:myVFComponent textValue="But this is red" textColor="red" /> -->
+
+        </apex:pageBlockSection>
+    </apex:pageBlock> 
+	        <div align="center">
+                           <img src="https://openjournalsystems.com/wp-content/uploads/2017/07/payment-success.png  " />         
+            </div>    
+            <center>
+                <b> The Payment is Successfully Completed </b>
+            </center>
+</apex:page>

@@ -1,0 +1,14 @@
+<apex:page tabStyle="Account"> 
+    <apex:pageBlock >
+        <apex:pageBlockSection title="Payament response" collapsible="false">
+            <!-- <c:myVFComponent textValue="This Text is blue" textColor="blue" />
+            <c:myVFComponent textValue="But this is red" textColor="red" /> -->
+            <p align="center">
+                <b> The Payment was Not Successful </b>
+            </p>
+            <img src="https://www.shutterstock.com/image-vector/icon-payment-failed-cancel-card-600w-1853406682.jpg" ></img>
+            
+           
+        </apex:pageBlockSection>
+    </apex:pageBlock>     
+</apex:page>
