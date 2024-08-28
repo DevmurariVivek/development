@@ -1,0 +1,5 @@
+<design:component >
+    <design:attribute name="Product_Record_ID" label="Product Record ID"/>
+    <!-- <design:attribute name="Product_Name" label="Product_Name"/> -->
+    <design:attribute name="recordId" label="RecordId"/>
+</design:component>

@@ -1,0 +1,26 @@
+<aura:component controller="AuraDemoApex" implements="flexipage:availableForAllPageTypes,lightning:actionOverride">
+
+    <aura:attribute name="flag" type="boolean" default="false"/>
+    <aura:attribute name ="myAttribute" type="String" default="Vivek"></aura:attribute>
+    <aura:handler name="init" value="{!this}" action ="{!c.callServer}"></aura:handler>
+
+    Enter The Text Input :: <lightning:input name="inputcomp" aura:id="inputcomp" default="Vivek"/>
+    <!-- Enter The Text Input :: <ui:inputText aura:id="inputcomp"/> -->
+    <!-- defines the If Block nad its condition -->
+    <aura:if isTrue="{!v.flag}">
+        <!-- Code to be executed in the If block -->
+        <div>
+            Value inside the If Tag
+        </div>
+            <!-- below code defined the "else" part to be handled -->
+            <!-- Here the Lese part is optional which can be utilized if necessary-->
+        <aura:set attribute="else">
+            <div>
+                Value inside the Set Tag
+            </div>
+        </aura:set>
+    </aura:if>
+
+    <lightning:button label="Click Here" onclick="{!c.doAction}"/>
+
+</aura:component>

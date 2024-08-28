@@ -1,0 +1,192 @@
+<aura:component implements="flexipage:availableForRecordHome,force:hasRecordId" controller="DeniedProspectMatchController" access="global">
+<aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+<aura:handler event="force:refreshView" action="{!c.doInit}" />
+<aura:handler event="force:showToast" action="{!c.reloadRecords}"/>
+<aura:attribute name="studentList" type="Student__c[]" default="[]" />
+<aura:attribute name="recordId" type="String" />
+<aura:attribute name="currentId" type="String" />
+
+
+<aura:attribute name="showConfirmDialog" type="boolean" default="false"/>
+
+<article class="slds-card slds-card_boundary headerBottomBorder forceRelatedListCardDesktop" aria-describedby="header_1:622;a" data-aura-class="forceRelatedListCardDesktop">
+<div class="slds-grid slds-page-header forceRelatedListCardHeader" data-aura-class="forceRelatedListCardHeader">
+    <header class="slds-media slds-media--center slds-has-flexi-truncate">
+        <div class="slds-media__figure stencil slds-avatar slds-avatar_small" aria-hidden="true"
+            data-aura-rendered-by="19:622;a">
+            <div class="extraSmall forceEntityIcon" style="background-color: #F2CF5B" data-aura-class="forceEntityIcon">
+                <span class="uiImage" data-aura-class="uiImage">
+                    <img src="https://subbudev-dev-ed.my.salesforce.com/img/icon/t4v35/custom/custom66_120.png"
+                        class="icon " alt="Cases" title="Cases" /></span>
+            </div>
+        </div>
+        <!--Heading-->
+        <div class="slds-media__body">
+            <h2 class="slds-card__header-title" id="header_1:622;a">
+                <a class="slds-card__header-link baseCard__header-title-container"
+                    href="{!'/lightning/r/'+v.recordId+'/related/Student__c/view'}">
+                    <span class="slds-truncate slds-m-right--xx-small" title="Cases">Denied Match</span>
+                    <span class="slds-shrink-none slds-m-right--xx-small" title="">({!v.studentList.length})</span></a>
+            </h2>
+        </div>
+    </header>
+</div>
+<div class="slds-hide">
+
+    <div force-placeholder2_listpreview="" class="slds-p-around_xxx+-small">
+        <div class="field">
+            <div class="text text-primary"></div>
+            <div class="text text-secondary"></div>
+        </div>
+        <div class="field">
+            <div class="text text-primary"></div>
+            <div class="text text-secondary">
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<ul class="uiAbstractList">
+    <li class="slds-var-p-horizontal_medium slds-var-p-vertical_xx-small desktop forceImageRelatedListStencil forceRecordLayout" data-aura-class="forceImageRelatedListStencil forceRecordLayout">
+    <br />
+    <aura:iteration items="{!v.studentList}" var="proj">
+        <div class="listItemBody withActions">
+            <div class="slds-grid slds-wrap">
+                <div class="slds-col slds-size_5-of-6">
+    
+                    <div class="slds-list--horizontal forceListRecordItem alingLookup"
+                        data-aura-class="forceListRecordItem">
+                        <div>
+                            <div class="recordCell" title="Student Name:">Student Name:</div>
+                        </div>
+                        <div class="outputLookupContainer forceOutputLookupWithPreview"
+                            data-aura-class="forceOutputLookupWithPreview">
+                            <a class="textUnderline outputLookupLink slds-truncate forceOutputLookup"
+                                href="{!'/lightning/r/Student__c/'+proj.Id+'/view'}" target="_blank" rel="noreferrer"
+                                title="{!proj.Name}" data-aura-class="forceOutputLookup">{!proj.Name}</a>
+                        </div>
+                    </div>
+    
+    
+                    <ul class="itemRows truncate">
+    
+                        <li class="tableRowGroup">
+                            <div class="slds-list--horizontal forceListRecordItem alingLookup"
+                                data-aura-class="forceListRecordItem">
+                                <div>
+                                    <div class="recordCell" title="College Name:">College Name:</div>
+                                </div>
+                                <div>
+                                    <div class="recordCell">
+                                        <div class="outputLookupLink slds-truncate ;a forceOutputLookup"
+                                            title="{!proj.College_Name__c}" data-aura-class="forceOutputLookup">
+                                            {!proj.College_Name__c}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+    
+                        <li class="tableRowGroup">
+                            <div class="slds-list--horizontal forceListRecordItem alingLookup"
+                                data-aura-class="forceListRecordItem">
+    
+                                <div>
+                                    <div class="recordCell" title="Match Stage:">Match Stage:</div>
+                                </div>
+                                <div>
+                                    <div class="recordCell">
+                                        <div class="outputLookupLink slds-truncate ;a forceOutputLookup"
+                                            title="{!proj.Match_Stage__c}" data-aura-class="forceOutputLookup">
+                                            {!proj.Match_Stage__c}
+                                        </div>
+                                    </div>
+                                </div>
+    
+    
+                            </div>
+                        </li>
+    
+                        <li class="tableRowGroup">
+                            <div class="slds-list--horizontal forceListRecordItem alingLookup"
+                                data-aura-class="forceListRecordItem">
+                                <div>
+                                    <div class="recordCell" title="Last Modified Date:">Last Modified Date:</div>
+                                </div>
+                                <div>
+                                    <div class="recordCell">
+                                        <span class="uiOutputDateTime" data-aura-class="uiOutputDateTime">
+                                            <lightning:formattedDateTime value="{!proj.LastModifiedDate}" year="numeric"
+                                                month="numeric" day="numeric" hour="2-digit" minute="2-digit"
+                                                timeZone="{!$Locale.timezone}" />
+                                        </span>
+    
+                                    </div>
+                                </div>
+    
+                            </div>
+                        </li>
+    
+                    </ul>
+                </div>
+                <div class="slds-col slds-size_1-of-6 alingButton">
+    
+                    <a class="keyboardMode--trigger" aria-haspopup="true" role="button" title="" href="javascript:void(0);"
+                        aria-expanded="true">
+                        <div class="rowActionsPlaceHolder slds-button slds-button--icon-x-small">
+                            <lightning:buttonMenu menuAlignment="right" iconSize="x-small" aura:id="{!proj.id}"
+                                onselect="{!c.handleSelect}" alternativeText="Show menu">
+                                <lightning:menuItem value="{!proj.Id+';Edit'}" label="Edit" iconName="utility:edit" />
+                                <lightning:menuItem value="{!proj.Id+';Delete'}" label="Delete" iconName="utility:delete" />
+                            </lightning:buttonMenu>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <br />
+    </aura:iteration>
+    
+    </li>
+    
+</ul>
+  
+    <a href="{!'/lightning/r/'+v.recordId+'/related/Student__r/view'}">
+    
+        <div class="slds-card__footer">
+            <span class="view-all-label">View All<span class="assistiveText">Denied Match</span></span>
+        </div>
+    </a>
+    
+    <div>    
+        <aura:if isTrue="{!v.showConfirmDialog}">
+            <!--Modal Box Start-->
+            <div role="dialog" class="slds-modal slds-fade-in-open ">
+                <div class="slds-modal__container">
+                    <!--Modal Box Header Start-->
+                    <header class="slds-modal__header">
+                        <h1 class="slds-text-heading--medium">Confirmation</h1>
+                    </header>
+                    <!--Modal Box Header End-->
+    
+                    <!--Modal Box Content Start-->
+                    <div class="slds-modal__content slds-p-around--medium">
+                        <center><b>Are you sure you want to delete this item?</b></center>
+                    </div>
+                    <!--Modal Box Content End-->
+    
+                    <!--Modal Box Button Start-->
+                    <footer class="slds-modal__footer">
+                        <lightning:button name='No' label='No' onclick='{!c.handleConfirmDialogNo}' />
+                        <lightning:button variant="brand" name='Yes' label='Yes' onclick='{!c.handleConfirmDialogYes}' />
+                    </footer>
+                    <!--Modal Box Button End-->
+                </div>
+            </div>
+            <div class="slds-backdrop slds-backdrop--open"></div>
+        </aura:if>
+    </div>
+    </article>
+    
+</aura:component>

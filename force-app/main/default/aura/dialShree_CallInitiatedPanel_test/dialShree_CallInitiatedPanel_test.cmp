@@ -1,0 +1,10 @@
+<aura:component controller="SaveToCaseDescriptionController" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+	<!-- Attributes -->
+    <aura:attribute name="inputText" type="String" />
+
+    <!-- Input fields -->
+    <lightning:input aura:id="inputText" label="Enter Text" value="{!v.inputText}" />
+
+    <!-- Button to save -->
+    <lightning:button label="Save to Case Description" onclick="{!c.saveToCaseDescription}" />
+</aura:component>

@@ -1,0 +1,19 @@
+<aura:component controller="AccountSearchController">
+    <aura:registerEvent name="AccountsLoaded" type="c:AccountsLoaded"/>
+    <aura:handler name="init" value="{!this}" action="{!c.oninit}"/>
+    <aura:attribute name="searchTerm" type="String" default="Ahemedabad"/>
+
+    <lightning:card title="Account Search" iconName="standard:search">
+        <div class="slds-form slds-p-around_x-small">
+        <lightning:input 
+                       label="Search"
+                       onchange="{!c.onsearchTermchange}"
+                       variant="label-hidden"
+                       value="{!v.searchTerm}"
+                       placeholder="Search by name, phone, website, or address"/>
+        </div>
+        <lightning:button variant="brand" label="Search" title="Brand action" onclick="{! c.handleClick }"  iconPosition="right"/>
+
+    </lightning:card>
+
+</aura:component>

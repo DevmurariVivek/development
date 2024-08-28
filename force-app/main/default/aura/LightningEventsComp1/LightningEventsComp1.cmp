@@ -1,0 +1,34 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    <aura:attribute name="incomes" type="Object"/>
+    <aura:attribute name="myColumns" type="List"/>
+    
+    <aura:registerEvent name="totalIncomeComponentEvent" type="c:LightningComponentEvent"></aura:registerEvent>
+    
+    <aura:handler name="totalIncomeComponentEvent" event="c:LightningComponentEvent" action="{!c.handleRegisteredComponentEvent}"/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    
+        <lightning:card title="SFDC Stop Income Calculator" iconName="standard:account"/>
+        
+    
+    <aura:set attribute="actions">
+        <lightning:button name="Hide/ShowIncomeForm" label="Hide/ShowIncomeForm" onclick="{!c.toggleIncomeForm}" />
+    </aura:set>
+    
+    <p class="slds-p-horizontal_small">
+        <div aura:id="IncomeForm" class="Hide">
+            <lightning:input aura:id="source" name="Income Source" required="true" label="Income Source"></lightning:input>
+            <lightning:input aura:id="amount" name="Amount" required="true" label="Amount"></lightning:input>
+            <br/>
+            <lightning:button name="Add Income" label="Add Income" onclick="{!c.addIncome}" variant="brand"></lightning:button>  
+           	
+        </div>
+        <br/>
+        
+        <lightning:datatable data="{!v.incomes}"
+                             columns="{!v.myColumns}"
+                             ketField="sno" />
+        
+        <br/>
+        <lightning:button name="Calculate Income" label="Calculate Income" onclick="{c.fireTotalIncomeComponentEvent}" variant="brand"/>
+    </p>
+ </aura:component>

@@ -1,0 +1,56 @@
+<aura:component implements="force:appHostable,flexipage:availableForRecordHome" controller="flexCardApex">
+<aura:handler name="init" value="{!this}" action="{!c.doInit}"></aura:handler>
+
+<!-- Dynamically load the list of contacts -->
+<aura:attribute name="contact" type="Contact[]"/>
+<aura:attribute name="contactList" type="Contact[]"/>
+<aura:attribute name="totalContacts" type="Integer"/>
+
+    <div>
+        <lightning:layout>
+            <lightning:layoutItem>
+                <lightning:icon iconName="standard:contact" />
+            </lightning:layoutItem>
+
+            <lightning:layoutItem class="slds-m-left_small">
+                <p class="slds-text-title_caps slds-line-height_reset">
+                    Contacts
+                </p>
+                <h1 class="slds-page-header__title slds-p-right_x-small">
+                    Contact Viewer
+                </h1>
+            </lightning:layoutItem>
+        </lightning:layout>
+
+        <lightning:layout>
+              <lightning:layoutItem>
+                <p class="slds-text-body_small">
+                    {!v.totalContacts} Contacts • View Contacts Based on Lead Sources
+                </p>
+             </lightning:layoutItem>
+        </lightning:layout>
+
+        <!-- Body with dropdown menu and list of contacts -->
+        <lightning:layout>
+        <lightning:layoutItem padding="horizontal-medium">
+            <!-- Create a dropdown menu with options -->
+            <lightning:select aura:id="select" label="Lead Source" name="source" onchange="{!c.handlechange}" class="slds-m-bottom_medium">
+                <option value="">--Select A Lead Source Value--</option>
+                <option value="Web" text="Web"></option>
+                <option value="Phone Inquiry" text="Phone Inquiry"></option>
+                <option value="Partner Referral" text="Partner Referral"></option>
+                <option value="Purchased List" text="Purchased List"></option>
+                <option value="Dreamforce" text="Dreamforce"></option>
+                <option value="Others" text="Others"></option>
+            </lightning:select>
+
+            <!-- Iterate over the list of contacts and display them -->
+            <aura:iteration var="contact" items="{!v.contact}">
+                <c:Contacts contact="{!contact}"/>
+            </aura:iteration>
+
+        </lightning:layoutItem>
+        </lightning:layout>
+
+    </div>
+</aura:component>

@@ -1,0 +1,20 @@
+<aura:component>
+  <aura:attribute name="message1" type="string" default="Button1" />
+  <aura:attribute name="message2" type="string" default="Button2"/>
+<h1  class="class1">
+    Button1 value == {!v.message1} 
+</h1>
+
+   <hr/>
+    <lightning:button variant="brand" label="Button1" title="Button1" onclick="{! c.handleClick1 }" />
+   <hr/>
+
+<h2 class="class2">
+    Button2 value == {!v.message2}
+</h2>
+
+      <hr/>
+      <lightning:button variant="brand" label="Button2" title="Button2" onclick="{! c.handleClick2 }" />
+      <hr/>
+
+</aura:component>

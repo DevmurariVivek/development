@@ -1,0 +1,14 @@
+<aura:component controller="CustomLeadController" implements="lightning:actionOverride" access="global" >
+    <aura:attribute name="lead" type="Lead" default="{}"/>
+    <lightning:card title="Create New Lead">
+        <lightning:input label="First Name" value="{!v.lead.FirstName}"/>
+        <lightning:input label="Last Name" value="{!v.lead.LastName}"/>
+        <lightning:input label="Company" value="{!v.lead.Company}"/>
+        <!-- Add more fields as needed -->
+        <lightning:button label="Save" onclick="{!c.saveLead}"/>
+        <lightning:button label="Cancel" onclick="{!c.cancel}"/>
+    </lightning:card>
+
+    <!-- If the implementation of custom lead creation page is been done in LWC, then that component can be added to aura component as shown below -->
+    <!-- <c:customLeadNewLWC> </c:customLeadNewLWC> -->
+</aura:component>

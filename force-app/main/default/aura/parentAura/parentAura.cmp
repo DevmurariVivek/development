@@ -1,0 +1,16 @@
+<aura:component>
+    <aura:handler name="cmpEvent" action="{!c.handlecomponentEvent}" event="c:componentEvent"/> <!-- here we will be handling the event fired by child component-->
+
+    <aura:attribute name="MesasgeFromchildAura" type="String"/>
+
+    <h1>
+        This is the Parent Aura
+    </h1>
+
+   <p>
+    {!v.MesasgeFromchildAura}
+   </p>
+
+   <hr/>
+   <c:childAura/>
+</aura:component>

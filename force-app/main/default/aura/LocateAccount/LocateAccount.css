@@ -1,0 +1,12 @@
+.THIS .inline-container {
+    display: inline-flex;
+}
+.THIS .padding-right-searchbar {
+    padding-right: 10px;
+} 
+.THIS .padding-rights-button {
+    padding-right: 35px;
+}
+.THIS .selected{
+    color:red;
+}

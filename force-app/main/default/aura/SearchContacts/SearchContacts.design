@@ -1,0 +1,4 @@
+<design:component >
+    <design:attribute name="contacts" label="Contacts List"/>
+
+</design:component>

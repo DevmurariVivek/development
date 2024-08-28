@@ -1,0 +1,10 @@
+.THIS .inline-container {
+    display: inline-flex;
+    margin-top: 20px;
+}
+.THIS .button1{
+    padding-right: 30px;
+}
+.THIS .button2{
+  padding-left: 20px;
+}

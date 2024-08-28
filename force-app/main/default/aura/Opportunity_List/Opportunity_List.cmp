@@ -1,0 +1,51 @@
+<aura:component controller="Opportunity_List_controller" implements="lightning:availableForFlowScreens,force:hasRecordId"  access="global">
+
+    <aura:attribute name="opportunities" type="Opportunity[]"/>
+    <aura:attribute name="columns" type="List"/>
+    <aura:attribute name="selectedRowsCount" type="Integer" default="0"/>
+    <aura:attribute name="selectedRow" type="Integer"/>
+    <aura:attribute name="maxRowSelection" type="Integer" default="1"/>
+    <aura:attribute name="recordId" type="String" />
+    <aura:attribute name="contactrecordId" type="String" />
+
+    <aura:attribute name="sortDirection" type="String" />
+    <aura:attribute name="sortedBy" type="String"  />
+    
+
+    <!-- <aura:attribute name="selectedSearchableList" type="List"/> -->
+    
+
+    <aura:handler name="init" value="{!this}" action="{!c.doinit}"/>
+
+    <lightning:card title="Linked Opportunities" iconName="standard:search">
+
+        
+         <lightning:datatable
+                           data="{!v.opportunities}"
+                           columns="{!v.columns}"
+                           aura:id="Opportunity_Table"
+                           keyField="Id"
+                           hideCheckboxColumn="false"    
+                           onrowselection="{!c.handleSelectedRow}"
+                           maxRowSelection="{!v.maxRowSelection}"
+                           showRowNumberColumn="true"
+                           
+                           sortedDirection="{!v.sortDirection}"
+                           sortedBy="{!v.sortedBy}"
+                           onsort="{!c.handleSort}">
+                           
+            </lightning:datatable>
+      
+   
+
+      <!-- <div>
+        <div class="inline-container">
+            <span> 
+            <div class="button2">
+                <lightning:button label="Create New Contact" variant="brand" iconPosition="left" onclick="{!c.NewButtonAction}"/>
+            </div>
+        </span>
+        </div>
+      </div> -->
+    </lightning:card>
+</aura:component>

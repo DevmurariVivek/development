@@ -1,0 +1,11 @@
+<aura:component>
+    <aura:registerEvent name="cmpEvent" type="c:componentEvent"/>  <!-- registerned the event in child component-->
+    <aura:attribute name="messageString" type="String"/>
+
+    <h1>
+        This is the Child Aura Component
+    </h1>
+       
+    <lightning:input value="{!v.messageString}" placeholder="Enter message....."/>
+    <lightning:button label="Fire component event" onclick="{!c.firecomponentEvent}"/>
+</aura:component>

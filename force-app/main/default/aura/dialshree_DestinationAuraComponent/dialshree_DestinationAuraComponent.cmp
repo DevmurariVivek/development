@@ -1,0 +1,8 @@
+<aura:component>
+    <aura:attribute name="agentLeadId" type="String" />
+    <aura:handler event="c:dialshree_ApplicationEvent" action="{!c.handleAppEvent}"/>
+
+    <h1>
+        The Agent Lead ID : {!v.agentLeadId}
+    </h1>
+</aura:component>

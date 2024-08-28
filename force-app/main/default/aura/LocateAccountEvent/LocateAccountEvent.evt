@@ -1,0 +1,4 @@
+<aura:event type="APPLICATION">
+    <aura:attribute name="accounts" type="account[]"/>
+
+</aura:event>

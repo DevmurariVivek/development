@@ -1,0 +1,6 @@
+<design:component >
+    <design:attribute name="opportunities" label="Linked Opportunities"/>
+    <design:attribute name="recordId" label="RecordId"/>
+    <design:attribute name="contactrecordId" label="Contact Record Id"/>
+
+</design:component>

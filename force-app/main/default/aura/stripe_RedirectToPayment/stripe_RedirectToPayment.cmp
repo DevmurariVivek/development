@@ -1,0 +1,9 @@
+<aura:component controller="stripe_ContactCheckout" implements="lightning:availableForFlowScreens,force:hasRecordId"  access="global">
+   
+    <aura:attribute name="CheckoutURL" type="String" />
+    <div class="slds-align_absolute-center" style="height:5rem">
+        <lightning:button  class="buttonClass" variant="brand" label="Redirect to Payment Page" title="Redirect to Payment Page" onclick="{! c.redirect }" />
+    </div>
+   
+
+</aura:component>

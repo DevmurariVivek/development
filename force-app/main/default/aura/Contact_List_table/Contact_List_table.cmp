@@ -1,0 +1,46 @@
+<aura:component implements="lightning:availableForFlowScreens,force:hasRecordId"  access="global">
+
+    <aura:attribute name="contacts" type="Contact[]"/>
+    <aura:attribute name="columns" type="List"/>
+    <aura:attribute name="selectedRowsCount" type="Integer" default="0"/>
+    <aura:attribute name="selectedRow" type="Integer"/>
+    <aura:attribute name="maxRowSelection" type="Integer" default="1"/>
+    <aura:attribute name="recordId" type="String" />
+    
+
+    <aura:attribute name="selectedSearchableList" type="List"/>
+    
+
+    <aura:handler name="init" value="{!this}" action="{!c.doinit}"/>
+
+    <lightning:card title="Contact List" iconName="standard:search">
+
+        
+         <lightning:datatable
+                           data="{!v.contacts}"
+                           columns="{!v.columns}"
+                           aura:id="Contact_List_Table"
+                           keyField="Id"
+                           hideCheckboxColumn="false"    
+                           onrowselection="{!c.handleSelectedRow}"
+                           maxRowSelection="{!v.maxRowSelection}"
+                           showRowNumberColumn="true"
+                           onsave="{!c.save}">
+            </lightning:datatable>
+      
+   
+
+      <div>
+        <div class="inline-container">
+            <!-- <div class="button1">
+                <lightning:button label="Continue With Selected" variant="brand" iconPosition="right" onclick="{! c.ContinueButtonAction }"/>
+            </div> -->
+            <span> 
+            <div class="button2">
+                <lightning:button label="Create New Contact" variant="brand" iconPosition="left" onclick="{!c.NewButtonAction}"/>
+            </div>
+        </span>
+        </div>
+      </div>
+    </lightning:card>
+</aura:component>

@@ -1,0 +1,16 @@
+<aura:component implements="flexipage:availableForAllPageTypes,force:hasRecordId" access="global" >
+<lightning:notificationsLibrary aura:id="notifLib"/>
+<aura:attribute name="picklistField" type="object"/>
+    
+<force:recordData aura:id="record"
+    layoutType="FULL"
+    recordId="{!v.recordId}"
+    targetFields="{!v.picklistField}"
+    mode="EDIT"/>
+    
+<lightning:picklistPath recordId="{!v.recordId}"
+        				variant="linear"
+        				picklistFieldApiName="SubStage__c"
+                onselect="{!c.handleSelect}" />
+
+</aura:component>

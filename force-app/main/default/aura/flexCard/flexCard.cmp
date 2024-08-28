@@ -1,0 +1,21 @@
+<aura:component implements="flexipage:availableForAllPageTypes" >
+<aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+
+<aura:attribute name="contact" type="Contact"/>
+<lightning:card variant="Narrow" title="Contacts Deatails" iconName="standard:contact" footer="Card Footer">
+
+
+            <p class="slds-p-horizontal_medium">
+                
+                <div class="Allignright">
+                <lightning:buttonMenu alternativeText="Action buttons" iconName="utility:down" iconSize="small" variant="border-filled" onselect="{! c.handleMenuSelect }" menuAlignment="right" >
+                    <lightning:menuItem label="Edit" value="Edit"/>
+                    <lightning:menuItem label="New" value="New"/>
+                    <lightning:menuItem label="Run Flow" value="RunFlow"/>
+                    <lightning:menuItem label="Delete" value="Delete" />
+                </lightning:buttonMenu>
+                </div>
+
+            </p>
+</lightning:card>
+</aura:component>

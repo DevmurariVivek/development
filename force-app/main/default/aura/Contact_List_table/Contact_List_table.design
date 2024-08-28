@@ -1,0 +1,5 @@
+<design:component >
+    <design:attribute name="contacts" label="Contacts List"/>
+    <design:attribute name="recordId" label="RecordId"/>
+
+</design:component>
