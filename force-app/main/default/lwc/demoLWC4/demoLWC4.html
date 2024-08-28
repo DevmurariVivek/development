@@ -1,0 +1,26 @@
+<template>
+    <lightning-card title="Contacts" icon-name="custom:custom12">
+        <div class="slds-m-around_medium">
+            <ul>
+                <template for:each = {contacts.data} for:item="contact" >
+                    <li key={contact.Id}>
+                        <b> {contact.Account.Name}</b>
+                        <hr>
+                        {contact.FirstName} - {contact.LastName}
+                        <hr>
+
+                        Contact Id :  {contact.Id}
+                    </li>
+                </template>
+            </ul>
+            <!-- <hr>
+            <div>
+                <template if:true={record.data} >
+                    <lightning-formatted-text value={name} >
+
+                    </lightning-formatted-text>
+                </template>
+            </div> -->
+        </div>  
+    </lightning-card>
+</template>

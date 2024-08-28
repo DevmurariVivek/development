@@ -1,0 +1,12 @@
+<template>
+    <lightning-card title="Create New Lead">
+        <div class="slds-m-around_medium">
+            <lightning-input label="First Name" value={lead.FirstName} onchange={handleInputChange}></lightning-input>
+            <lightning-input label="Last Name" value={lead.LastName} onchange={handleInputChange}></lightning-input>
+            <lightning-input label="Company" value={lead.Company} onchange={handleInputChange}></lightning-input>
+            <!-- Add more fields as needed -->
+            <lightning-button label="Save" onclick={saveLead} class="slds-m-top_medium"></lightning-button>
+            <lightning-button label="Cancel" onclick={cancel} class="slds-m-left_x-small"></lightning-button>
+        </div>
+    </lightning-card>
+</template>

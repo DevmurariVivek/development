@@ -1,0 +1,24 @@
+<template>
+    <div>
+        <lightning-card title="Account Datatable" variant="narrow" icon-name="utility:Account">
+            <div  class="header">
+            <h1 class="header_h1"> Below are the Account in Datatable view </h1>
+            </div>
+             <div slot="actions">
+                <lightning-button>
+                    <lightning-button-icon icon-name="utility:down">
+                    </lightning-button-icon>
+                </lightning-button>
+             </div>
+
+        </lightning-card>
+    </div>
+ 
+    <div style="height :250px;">
+        <lightning-datatable 
+            key-field = "id"
+            data = "{rowdata}"
+            columns = "{columndata}">
+        </lightning-datatable>
+    </div>
+</template>

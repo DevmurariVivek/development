@@ -1,0 +1,44 @@
+.CardBody {
+    /* Additional styles for card body if needed */
+}
+
+.center-btn {
+    text-align: center;
+}
+
+.DataTable {
+    text-align: center;
+    border-style: groove;
+    border: 2px solid #898989;
+}
+
+.center-container {
+    border: 10px;
+}
+
+.NoRecordsContext {
+    text-align: center;
+    color: green;
+}
+
+.merge-button-block {
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+.slds-modal__container{
+    /* box-sizing: border-box;
+    /* margin: 0 var(--lwc-spacingXLarge, 2rem); */
+    /* padding: var(--lwc-squareIconLargeBoundary, 3rem) 0 var(--lwc-squareIconLargeBoundaryAlt, 5rem) 0;
+    height: 100%;
+    flex-direction: column;
+    display: flex;
+    margin: 0 auto;
+    width: 50%;
+    max-width: 100rem;
+    min-width: 90rem;  */
+}
+
+.back_button {
+    float: left;
+}

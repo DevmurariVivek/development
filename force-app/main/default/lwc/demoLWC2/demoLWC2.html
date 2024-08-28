@@ -1,0 +1,27 @@
+<template>
+
+    <div>
+        <lightning-button class="slds-m-left_x-small" label="Click and Go" variant="brand" onclick={handleclick}>
+            </lightning-button>
+
+    </div>
+
+    <div if:true={showdata}>
+     <!-- <template for:each={datamap} for:item="currentItem">
+        <div key={currentItem.key}>
+            
+            <div>Name : {currentItem.Name}</div>
+            <div>Location : {currentItem.Location}</div>
+            <div>Designation : {currentItem.Designation}</div>
+            <div>Level : {currentItem.Level}</div>
+            
+        </div>
+
+     </template>   -->
+
+        <div>Name : {name}</div>
+        <div>Location : {location}</div>
+        <div>Designation : {designation}</div>
+        <div>Level : {level}</div>
+    </div>
+</template>

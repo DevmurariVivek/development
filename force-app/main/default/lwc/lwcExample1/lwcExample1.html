@@ -1,0 +1,25 @@
+<template>
+
+    <lightning-card title="Showing all the Accounts from entered account name">
+
+        <div>
+            <lightning-input label="Enter Name of Account" type="text" onchange={handleInputChange}></lightning-input>
+            
+            <lightning-button title="Click Here" label="Click Here" onclick={buttonClicked}></lightning-button>
+        </div>
+
+        <hr>
+        <template if:true={showRecords}>
+            <p>Inside Unordered list :::-> </p>
+            <ul class="slds-m-around_medium">
+                <template for:each={accountlist} for:item="account">
+                    <li key={account.id}>
+                        {account.Name}
+                    </li>
+                </template>
+            </ul>
+        </template>
+        
+    </lightning-card>
+    
+</template>
