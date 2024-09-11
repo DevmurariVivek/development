@@ -1,0 +1,14 @@
+.slds-m-around_medium{
+
+}
+
+.customButtonStyling{
+    --sds-c-button-brand-color-background: #0AA3F7;
+    --sds-c-button-color-border: white;
+}
+
+.customBadgeStyling{
+    --sds-c-badge-color-background: green;
+    --sds--c-badge-color-border : white;
+
+}
