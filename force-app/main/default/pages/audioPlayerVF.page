@@ -1,0 +1,29 @@
+<apex:page standardController="Call_log__c" showHeader="false" sidebar="false" applyBodyTag="false" docType="html-5.0">
+       <style>
+        /* Additional styling to ensure audio controls are visible */
+
+        body {
+            overflow: visible !important; /* Prevent any unwanted scrolling */
+        }
+        
+        .audio-container {
+            position: relative; /* Ensure positioning */
+            z-index: 1; /* Ensure it is above other content */
+            overflow: visible;
+        }
+
+        audio {
+            width: 100%; /* Full width */
+            z-index: 10; /* Ensure audio is on top */
+            position: relative; /* Ensure proper stacking context */
+        }
+    </style>
+
+    <!-- Adding SLDS utility classes to remove padding/margin -->
+    <div class="slds-p-around_none slds-m-around_none audio-container">
+        <audio controls="true" style="width: 100%; margin-top: 21%;">
+            <source src="{!Call_log__c.recordingLink__c}" type="audio/wav" />
+            Your browser does not support the audio element.
+        </audio>
+    </div>
+</apex:page>

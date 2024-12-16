@@ -1,0 +1,22 @@
+<apex:page showHeader="false" sidebar="false">
+
+    <apex:includeLightning />
+    <script src="{!URLFOR($Resource.DialShreeCTI2file)}"></script>
+
+	<div id="lightning"></div>
+    <script type="text/javascript">
+        $Lightning.use("ManagedCodeDev:callCenterAuraApp", function() {
+            $Lightning.createComponent("ManagedCodeDev:callCenterAura", 
+            {}, 
+            "lightning",
+            function(cmp) {
+                console.log("Component loaded!");
+            });
+        });
+    </script>
+
+    <script>
+        sforce.opencti.enableClickToDial();
+    </script>
+
+</apex:page>

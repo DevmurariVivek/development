@@ -1,0 +1,19 @@
+<!-- PhoneHandlerComponent.cmp -->
+<aura:component access="global" implements="lightning:utilityItem,force:hasRecordId" controller="callCenterAuraController">
+    
+    <aura:attribute name="recordId" type="String" />
+    <aura:handler name="init" value="{!this}" action="{!c.init}" />
+    <aura:attribute name="statusMessage" type="String" default="Connecting..." />
+    <aura:attribute name="spinner" type="Boolean" default="true" />
+    <aura:attribute name="detailsFetched" type="Boolean" default="false"/>
+    <aura:attribute name="isPolling" type="Boolean" default="false"/>
+
+    <lightning:card title="Phone Dialer" iconName="utility:call">
+        <div class="slds-p-horizontal_small">
+            <div class="slds-text-title slds-m-top_medium">
+                <p>{!v.statusMessage}</p>
+            </div>
+        </div>
+    </lightning:card>
+
+</aura:component>

@@ -1,0 +1,15 @@
+<!-- callLogAudioPlayer.html -->
+<template>
+    <lightning-card title="Call Recording">
+        <template if:true={isRecordingAvailable}>
+            <audio controls>
+                <!-- Adding a type for .wav files -->
+                <source src={recordingUrl} type="audio/wav" />
+                Your browser does not support the audio element.
+            </audio>
+        </template>
+        <template if:false={isRecordingAvailable}>
+            <p>No recording available.</p>
+        </template>
+    </lightning-card>
+</template>
